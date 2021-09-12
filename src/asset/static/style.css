@@ -1,0 +1,36 @@
+.text-outline {
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+.text-transparent {
+    color: black;
+}
+.background-home {
+    /* background-image: url(../images/background.png); */
+    background-color: #050505;
+    background-size:cover;
+   }
+.w-card{
+    margin: 20px;
+}
+
+.w-card-image {
+    border-radius: 10px;
+    width: 350px;
+    height:350px;
+    box-shadow: 0px 0px 3px 1px #ccc;
+
+}
+
+.w-card-title {
+    font-size: 24px;
+    margin:0;
+}
+.w-card-subtitle {
+    font-size: 16px;
+    margin:0;
+}
+
+.w-cord-info {
+    margin-top:10px;
+    min-height: 100px;
+}
