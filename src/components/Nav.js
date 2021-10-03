@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export const Navigation = (props) => {
   return(
-    <Navbar className="border-bottom" bg="transparent" expand="lg"> 
+    <Navbar className="border-bottom ml-2" bg="transparent" expand="lg"> 
         <Navbar.Brand>
         LifeBook
         </Navbar.Brand>
