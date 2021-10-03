@@ -9,6 +9,12 @@ import { Header } from '../components/Header'
 **/
 
 export const Home = (props) => {
+  const dummyObj = {
+    
+  }
+  const handlePosts = () =>{
+
+  }
   return(
     <div>
         <Header title = "this is title" subTitle = "subtitle" text = "text"/>
@@ -16,6 +22,7 @@ export const Home = (props) => {
             
             <p>Content</p>
         </Content>
+
         
     </div>
    )
