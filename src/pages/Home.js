@@ -9,9 +9,22 @@ import { Header } from '../components/Header'
 **/
 
 export const Home = (props) => {
-  const dummyObj = {
-    
+  const dummyObj = [
+    {
+    "userName" : "Sarah",
+    "post" : "I am Sarah"
+  },
+  {
+    "userName" : "Sam",
+    "post" : "I am Sam"
+  },
+  {
+    "userName" : "Anson",
+    "post" : "I am Anson"
   }
+]
+    
+  
   const handlePosts = () =>{
 
   }

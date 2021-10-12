@@ -12,9 +12,11 @@ function App() {
       <div>
       <BrowserRouter>
         <Navigation />
+        
         <Route exact path = "/">
           <Home />
         </Route>
+
         <Route path = "/about">
           <About />
         </Route>
