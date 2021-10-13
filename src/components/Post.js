@@ -9,7 +9,7 @@ export const Post = (props) => {
   return(
     <div>
         {props.userName}
-        {props.content}
+        {props.post}
         {/* post comments */}
     </div>
    )
