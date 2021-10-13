@@ -7,6 +7,6 @@ import React from 'react'
 
 export const About = (props) => {
   return(
-    <div>About</div>
+    <div>This is the about page</div>
    )
   }

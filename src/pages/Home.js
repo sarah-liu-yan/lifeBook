@@ -9,20 +9,36 @@ import { Header } from '../components/Header'
 **/
 
 export const Home = (props) => {
-  const dummyObj = {
-    
+  const dummyArr = [
+    {
+    "userName" : "Sarah",
+    "post" : "I am Sarah"
+  },
+  {
+    "userName" : "Sam",
+    "post" : "I am Sam"
+  },
+  {
+    "userName" : "Anson",
+    "post" : "I am Anson"
   }
+] 
   const handlePosts = () =>{
-
+    return dummyArr.map(item => {
+      return(
+        <li>{item.userName} : {item.post}</li>
+      )
+    })
   }
   return(
     <div>
         <Header title = "this is title" subTitle = "subtitle" text = "text"/>
         <Content>
-            
-            <p>Content</p>
+            <p>This is the home page</p>
         </Content>
-
+    <ul>
+      {handlePosts()}
+    </ul>
         
     </div>
    )
