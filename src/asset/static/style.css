@@ -1,16 +1,20 @@
 .text-outline {
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    -webkit-text-stroke: 1px rgb(14, 13, 13);
 }
 .text-transparent {
-    color: black;
+    color: rgb(238, 232, 232);
 }
 .background-home {
-    /* background-image: url(../images/background.png); */
+    background-image: url(../static/images/background.jpg);
     background-color: #050505;
     background-size:cover;
    }
 .w-card{
     margin: 20px;
+    border-radius: 10px;
+    width: auto;
+    height:auto;
+    box-shadow: 0px 0px 3px 1px #ccc;
 }
 
 .w-card-image {
@@ -33,4 +37,7 @@
 .w-cord-info {
     margin-top:10px;
     min-height: 100px;
+}
+.nav-link {
+    color:#050505;
 }
