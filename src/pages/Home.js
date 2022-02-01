@@ -1,6 +1,10 @@
 import React from 'react'
 import { Content } from '../components/Content'
 import { Header } from '../components/Header'
+import strawberry from '../asset/static/images/strawberry.jpeg'
+import ube from '../asset/static/images/ube.jpeg'
+import banana from '../asset/static/images/banana.jpeg'
+import { Container, Row } from 'react-bootstrap'
 
 
 /**
@@ -11,34 +15,37 @@ import { Header } from '../components/Header'
 export const Home = (props) => {
   const dummyArr = [
     {
-    "userName" : "Sarah",
-    "post" : "I am Sarah"
+    "title" : "Strawberry Donut",
+    "description" : "24 hr raised brioche, sugar coated, filled with strawberry mascarpone cream and diced fresh strawberries.",
+    "pic" : strawberry
   },
   {
-    "userName" : "Sam",
-    "post" : "I am Sam"
+    "title" : "Ube Donut",
+    "description" : "24 hr raised brioche, sugar coated and filled with ube cream.",
+    "pic" : ube
   },
   {
-    "userName" : "Anson",
-    "post" : "I am Anson"
+    "title" : "Banana Donut",
+    "description" : "24 hr raised brioche, sugar coated and filled with banana cream, topped with shaved chocolate.",
+    "pic" : banana
   }
 ] 
   const handlePosts = () =>{
     return dummyArr.map(item => {
       return(
-        <li>{item.userName} : {item.post}</li>
+        <Content title={item.title} description={item.description} pic={item.pic} />
       )
     })
   }
   return(
     <div>
-        <Header title = "this is title" subTitle = "subtitle" text = "text"/>
-        <Content>
-            <p>This is the home page</p>
-        </Content>
-    <ul>
-      {handlePosts()}
-    </ul>
+        <Header title = "YW Bakery" subTitle = "Baking your ideas for life" text = "text"/>
+        <Container fluid={true}>
+          <Row className="justify-content-around">
+            {handlePosts()}
+          </Row>
+        </Container>
+        
         
     </div>
    )
