@@ -1,5 +1,7 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../store/actions';
 
 /**
 * @author
@@ -10,10 +12,32 @@ export const Cart = (props) => {
   const list = useSelector((store) =>
     store.cartReducer
   )
-  const mapList = list.map((item) => {
-    return (
-      <li>{item.type} : {item.quantity}</li>
-    )
+  const dispatch = useDispatch();
+  const {addItem, reduceItem} = bindActionCreators(
+    actionCreators,
+    dispatch
+)
+  
+  const mapList = list.map((item, key) => {
+    const handleIncrease = (e) =>{
+      addItem({
+        quantity:1,
+        name:item.name,
+        position: key
+      })
+    }
+    const handleDecrease = (e) =>{
+      reduceItem({
+        name:item.name,
+        position: key
+      })
+    }
+    if(item !== null){
+      return (
+        <li key={key}>{item.name} : {item.quantity} <button onClick={handleIncrease} >+</button><button onClick={handleDecrease} >-</button> </li>
+      )
+    }
+    
   })
   return(
     <div>

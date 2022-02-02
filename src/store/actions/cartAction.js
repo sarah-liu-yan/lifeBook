@@ -8,3 +8,13 @@ export const addItem = (item) =>{
         )
     }
 }
+export const reduceItem = (item) =>{
+    return (dispatch) => {
+        dispatch(
+            {
+                type:'reduceItem',
+                payload:item
+            }
+        )
+    }
+}
