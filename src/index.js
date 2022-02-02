@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './store/reducers';
 
-const store = createStore(reducers, {}, applyMiddleware(thunk))
+const ReactReduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const middleware = [thunk];
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// const store = createStore(reducers, {}, applyMiddleware(thunk))
+const store = createStore(reducers, {}, compose(applyMiddleware(...middleware),ReactReduxDevTools))
 ReactDOM.render(
     <Provider store = {store}>
       <App />
