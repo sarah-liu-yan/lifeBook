@@ -12,7 +12,7 @@ export const Cart = (props) => {
   )
   const mapList = list.map((item) => {
     return (
-      <li>{item}</li>
+      <li>{item.type} : {item.quantity}</li>
     )
   })
   return(

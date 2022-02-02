@@ -1,8 +1,8 @@
 const cartReducer = (state=[],action) => {
     switch(action.type) {
-        case "add":
-            return state.push(action.payload);
-        case "delete":
+        case "addItem":
+            return [...state, action.payload];
+        case "deleteItem":
             return state.filter();
         default:
             return state;
