@@ -30,17 +30,19 @@ export const Content = (props) => {
         }
     }
     const handleSubmit = (e) =>{
+        e.preventDefault();
         if(input>0){
             // console.log("submit : "+input)
             addItem(
                 {
                     quantity: input,
-                    type: props.title
+                    name: props.title
                 }
             )
         }
+        setInput(0);
         
-        e.preventDefault();
+        console.log("e.preventDefault();")
     }
     return(
         <form className='d-inline-block w-card' onSubmit={handleSubmit}>
