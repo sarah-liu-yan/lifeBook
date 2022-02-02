@@ -46,6 +46,14 @@ const cartReducer = (state=[],action) => {
                 return newState;
             }
             return state.filter();
+        case "deleteItem":
+            var filteredState = state.filter(obj => obj!==null);
+            const newState = filteredState.map(obj => {
+                if(obj.name === action.payload.name){
+                    return null;
+                }
+            })
+            return newState;
         default:
             return state;
     }
