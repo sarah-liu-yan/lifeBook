@@ -13,7 +13,7 @@ export const Cart = (props) => {
     store.cartReducer
   )
   const dispatch = useDispatch();
-  const {addItem, reduceItem} = bindActionCreators(
+  const {addItem, reduceItem, deleteItem} = bindActionCreators(
     actionCreators,
     dispatch
 )
@@ -23,18 +23,26 @@ export const Cart = (props) => {
       addItem({
         quantity:1,
         name:item.name,
-        position: key
       })
     }
     const handleDecrease = (e) =>{
       reduceItem({
         name:item.name,
-        position: key
+      })
+    }
+    const handleDelete = () =>{
+      deleteItem({
+        name:item.name
       })
     }
     if(item !== null){
       return (
-        <li key={key}>{item.name} : {item.quantity} <button onClick={handleIncrease} >+</button><button onClick={handleDecrease} >-</button> </li>
+        <li key={key}>
+          {item.name} : {item.quantity} 
+          <button onClick={handleIncrease} >+</button>
+          <button onClick={handleDecrease} >-</button> 
+          <button onClick={handleDelete} >x</button> 
+        </li>
       )
     }
     

@@ -18,3 +18,14 @@ export const reduceItem = (item) =>{
         )
     }
 }
+
+export const deleteItem = (item) =>{
+    return (dispatch) => {
+        dispatch(
+            {
+                type:'deleteItem',
+                payload:item
+            }
+        )
+    }
+}
