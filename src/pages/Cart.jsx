@@ -21,7 +21,7 @@ export const Cart = (props) => {
     console.log(item)
     if(item !== null){
       return (
-          <CartItem key={item.id} name = {item.name} quantity = {item.quantity} pic = {item.pic} />
+          <CartItem key={key} name = {item.name} quantity = {item.quantity} pic = {item.pic} />
       )
     }
     

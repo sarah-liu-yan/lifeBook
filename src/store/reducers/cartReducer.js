@@ -39,7 +39,7 @@ const cartReducer = (state=[],action) => {
                     if(obj !== null && obj.name === action.payload.name && obj.quantity>1){
                         console.log("obj.type.quantity :"+obj.quantity)
                         return {...obj, quantity:obj.quantity-1}
-                    }else if(obj !== null && obj.quantity===1){
+                    }else if(obj !== null && obj.quantity===1 && obj.name === action.payload.name){
                         
                         return null
                     }
