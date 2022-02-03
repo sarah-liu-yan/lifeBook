@@ -1,6 +1,9 @@
 import React from 'react'
+import { Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux';
+import { CartItem } from '../components/CartItem';
+import { Header } from '../components/Header';
 import { actionCreators } from '../store/actions';
 
 /**
@@ -12,47 +15,25 @@ export const Cart = (props) => {
   const list = useSelector((store) =>
     store.cartReducer
   )
-  const dispatch = useDispatch();
-  const {addItem, reduceItem, deleteItem} = bindActionCreators(
-    actionCreators,
-    dispatch
-)
-  
+
   const mapList = list.map((item, key) => {
-    const handleIncrease = (e) =>{
-      addItem({
-        quantity:1,
-        name:item.name,
-      })
-    }
-    const handleDecrease = (e) =>{
-      reduceItem({
-        name:item.name,
-      })
-    }
-    const handleDelete = () =>{
-      deleteItem({
-        name:item.name
-      })
-    }
+    console.log("cart item :")
+    console.log(item)
     if(item !== null){
       return (
-        <li key={key}>
-          {item.name} : {item.quantity} 
-          <button onClick={handleIncrease} >+</button>
-          <button onClick={handleDecrease} >-</button> 
-          <button onClick={handleDelete} >x</button> 
-        </li>
+          <CartItem key={item.id} name = {item.name} quantity = {item.quantity} pic = {item.pic} />
       )
     }
     
   })
   return(
     <div>
-      <div>Cart</div>
-      <ul>
-        {mapList}
-      </ul>
+      <Header title = "Your Cart" subTitle = "Enjoy!" />
+      <Container fluid={true}>
+        <Row className="justify-content-around">
+          {mapList}
+        </Row>
+      </Container>
     </div>
     
    )

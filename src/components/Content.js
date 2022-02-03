@@ -19,9 +19,6 @@ export const Content = (props) => {
         actionCreators,
         dispatch
     )
-    useEffect(()=>{
-        console.log("list: "+list);
-    })
     const handleSetInput = (e) => {
         if(e.target.value >=0){
             setInput(parseInt(e.target.value));
@@ -35,8 +32,10 @@ export const Content = (props) => {
             // console.log("submit : "+input)
             addItem(
                 {
+                    
                     quantity: input,
-                    name: props.title
+                    name: props.title,
+                    pic: props.pic
                 }
             )
         }
