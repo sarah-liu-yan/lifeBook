@@ -31,9 +31,9 @@ export const Home = (props) => {
   }
 ] 
   const handlePosts = () =>{
-    return dummyArr.map(item => {
+    return dummyArr.map((item,key) => {
       return(
-        <Content title={item.title} description={item.description} pic={item.pic} />
+        <Content key={key} title={item.title} description={item.description} pic={item.pic} />
       )
     })
   }

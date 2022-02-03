@@ -23,6 +23,8 @@ const cartReducer = (state=[],action) => {
             
             // return [...state,action.payload];
         case "reduceItem":
+            console.log("cartReducer reducing Item for : ")
+            console.log(action.payload.name)
             var exist = state.find(obj => {
                 if(obj !== null){
                     return obj.name === action.payload.name
@@ -47,12 +49,21 @@ const cartReducer = (state=[],action) => {
             }
             return state.filter();
         case "deleteItem":
+            console.log("cartReducer deleting Item for : ")
+            console.log(action.payload.name)
             var filteredState = state.filter(obj => obj!==null);
-            const newState = filteredState.map(obj => {
+            var newState = filteredState.map(obj => {
+                console.log(obj)
                 if(obj.name === action.payload.name){
+                    console.log("entered :"+obj.name)
                     return null;
                 }
+                return obj;
             })
+            // var newState = [...state];
+            // newState.splice(action.payload.id, 1, null)
+            console.log("newState")
+            console.log(newState)
             return newState;
         default:
             return state;
