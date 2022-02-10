@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../store/actions';
 /**
@@ -11,9 +10,6 @@ import { actionCreators } from '../store/actions';
 export const Content = (props) => {
     const[input, setInput] = useState(0);
 
-    const list = useSelector((state) => 
-        state.cartReducer
-    )
     const dispatch = useDispatch();
     const {addItem} = bindActionCreators(
         actionCreators,
@@ -32,7 +28,6 @@ export const Content = (props) => {
             // console.log("submit : "+input)
             addItem(
                 {
-                    
                     quantity: input,
                     name: props.title,
                     pic: props.pic
@@ -45,7 +40,7 @@ export const Content = (props) => {
     }
     return(
         <form className='d-inline-block w-card' onSubmit={handleSubmit}>
-            <img className='w-card-image' src={props.pic}/>
+            <img alt={props.title} className='w-card-image' src={props.pic}/>
             <div className="w-card-title"> {props.title} </div>
             <div className="w-card-subtitle"> {props.description} </div>
             <input type="number" value={input.toString()} onChange={handleSetInput} />
