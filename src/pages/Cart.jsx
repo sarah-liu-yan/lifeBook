@@ -1,10 +1,8 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux'
-import { bindActionCreators } from 'redux';
+import {  useSelector } from 'react-redux'
 import { CartItem } from '../components/CartItem';
 import { Header } from '../components/Header';
-import { actionCreators } from '../store/actions';
 
 /**
 * @author
@@ -24,7 +22,7 @@ export const Cart = (props) => {
           <CartItem key={key} name = {item.name} quantity = {item.quantity} pic = {item.pic} />
       )
     }
-    
+    return null
   })
   return(
     <div>

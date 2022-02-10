@@ -1,7 +1,5 @@
 import { Search } from '@material-ui/icons';
 import React from 'react'
-import { Nav,Navbar, NavbarBrand } from 'react-bootstrap';
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 /**

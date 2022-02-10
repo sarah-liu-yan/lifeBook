@@ -14,13 +14,13 @@ export const CartItem = (props) => {
     actionCreators,
     dispatch
   )
-  const handleIncrease = (e) =>{
+  const handleIncrease = () =>{
     addItem({
       quantity:1,
       name:props.name,
     })
   }
-  const handleDecrease = (e) =>{
+  const handleDecrease = () =>{
     console.log("Cart Decrease : "+props.name)
     reduceItem({
       name:props.name,
@@ -37,7 +37,7 @@ export const CartItem = (props) => {
         {props.name}
         {props.quantity}
         
-        <img className='w-card-image' src={props.pic}/>
+        <img alt={props.name} className='w-card-image' src={props.pic}/>
         <button onClick={handleIncrease} >+</button>
         <button onClick={handleDecrease} >-</button> 
         <button onClick={handleDelete} >x</button> 
