@@ -17,7 +17,7 @@ export const Home = (props) => {
     {
     "title" : "Strawberry Donut",
     "description" : "24 hr raised brioche, sugar coated, filled with strawberry mascarpone cream and diced fresh strawberries.",
-    "pic" : strawberry
+    "pic" : '../asset/static/images/strawberry.jpeg'
   },
   {
     "title" : "Ube Donut",
