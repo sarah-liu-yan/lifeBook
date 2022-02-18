@@ -13,6 +13,7 @@ import { Container, Row } from 'react-bootstrap'
 **/
 
 export const Home = (props) => {
+  const []
   const dummyArr = [
     {
     "title" : "Strawberry Donut",
