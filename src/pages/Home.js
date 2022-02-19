@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Content } from '../components/Content'
 import { Header } from '../components/Header'
 import strawberry from '../asset/static/images/strawberry.jpeg'
@@ -13,7 +13,10 @@ import { Container, Row } from 'react-bootstrap'
 **/
 
 export const Home = (props) => {
-  const []
+  const [list, setList] = useState([]);
+  useEffect(()=>{
+
+  },[])
   const dummyArr = [
     {
     "title" : "Strawberry Donut",
