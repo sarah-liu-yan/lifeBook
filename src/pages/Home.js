@@ -17,6 +17,13 @@ export const Home = (props) => {
   useEffect(()=>{
 
   },[])
+  const getList = async () =>{
+    fetch('http://localhost:5000/cakes')
+      .then(res => res.json())
+      .then(res => {
+        setList(res)
+      })
+  }
   const dummyArr = [
     {
     "title" : "Strawberry Donut",
