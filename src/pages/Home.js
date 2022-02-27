@@ -15,14 +15,18 @@ import { Container, Row } from 'react-bootstrap'
 export const Home = (props) => {
   const [list, setList] = useState([]);
   useEffect(()=>{
-
+    getList();
   },[])
   const getList = async () =>{
-    fetch('http://localhost:5000/cakes')
+    fetch('http://localhost:5000/api/v1/cakes')
       .then(res => res.json())
       .then(res => {
+        console.log(res)
         setList(res)
       })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
   }
   const dummyArr = [
     {
